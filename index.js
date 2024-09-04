@@ -20,8 +20,11 @@ app.use(bodyParser.urlencoded({limit:'30mb', extended: true}));
 // }
 app.use(cors());
 
-app.use('/posts', PostRoutes)
-app.use('/user', UserRoutes)
+app.use('/posts', PostRoutes);
+app.use('/user', UserRoutes);
+app.get('/', function(req,res){
+    res.send('server is working')
+});
 
 const CONNECTION_URL = process.env.CONNECTION_URL
 
